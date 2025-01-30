@@ -125,4 +125,5 @@ describe('Child Component', () => {
       fixture.detectChanges(); // Trigger change detection
     });
   })
+
 });
