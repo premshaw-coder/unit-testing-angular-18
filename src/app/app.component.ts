@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -6,8 +6,11 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'unit-testing-angular-18';
+  @ViewChild('myParagraph', { static: true }) myParagraph!: ElementRef; // Non-null assertion (!)
+  changeText() {
+    this.myParagraph.nativeElement.textContent = 'Text changed!';
+  }
 }
