@@ -8,6 +8,7 @@ import { NotLazyLoadedComponent } from './not-lazy-loaded/not-lazy-loaded.compon
 import { of } from 'rxjs/internal/observable/of';
 import { paramsIdComponent } from './paramsId/paramsId.component';
 import { QueryparamsComponent } from './queryparams/queryparams.component';
+import { routes } from './app.routes';
 
 describe('Router Unit Test', () => {
   let router: Router;
@@ -17,21 +18,7 @@ describe('Router Unit Test', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([{
-          path: 'custom',
-          loadComponent: () => import('./lazy-loaded/lazy-loaded.component')
-            .then(m => m.LazyLoadedComponent)
-        },
-        {
-          path: 'not-lazy-loaded', component: NotLazyLoadedComponent
-        },
-        {
-          path: 'employees/:id', component: paramsIdComponent
-        },
-        {
-          path: 'queryparams', component: QueryparamsComponent
-        }
-        ]),
+        RouterModule.forRoot(routes),
         AppComponent
       ],
       providers: [
