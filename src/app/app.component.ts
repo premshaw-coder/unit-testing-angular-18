@@ -9,10 +9,12 @@ import { ToggleSwitch } from 'primeng/toggleswitch';
 import { Select } from 'primeng/select';
 import { RadioButton } from 'primeng/radiobutton';
 import { Message } from 'primeng/message';
+import { FormArrayComponent } from './form-array/form-array.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ButtonModule, InputTextModule, FormsModule, ReactiveFormsModule, CheckboxModule,
+  imports: [FormArrayComponent, ButtonModule, InputTextModule, FormsModule, ReactiveFormsModule, CheckboxModule,
     DatePicker, MultiSelectModule, ToggleSwitch, Select, RadioButton, Message
   ],
   templateUrl: './app.component.html',
